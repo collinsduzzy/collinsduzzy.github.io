@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Countdown</title>
+		<link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/materialize.css">
+		<style>
+			@font-face {
+				font-family: Nunito;
+				src: url(fonts/Nunito-Regular.ttf);
+			}
+			* {
+				font-family: Nunito;
+			}
+			div.col {
+				display: inline-block;
+				padding: 20px !important;
+			}
+			span {
+				margin-left: 10px;
+				font-size: 2.5em;
+			}
+			span[id] {
+				font-weight: bold;
+				color: #388E3C;
+			}
+			section.container {
+				background-color: #fafafa;
+				position: relative;
+				border-radius: 100px;
+				top: 10vw !important;
+			}
+		</style>
+	</head>
+	<body>
+		<section class="section container center z-depth-2">
+			<h3 class="green-text text-darken-3" style="font-weight: bold">Countdown</h3>
+			<div class="row">
+				<div class="col s12 white">
+					<span class="days" id="day"></span>
+					<span>Days</span>
+					<span class="hours" id="hour"></span> 
+					<span>Hours</span>
+					<span class="minutes" id="minute"></span>
+					<span>Minutes</span>
+					<span class="seconds" id="second"></span>
+					<span>Seconds</span>
+				</div>
+			</div>
+			<a href="index.html" class="btn-large z-depth-0 green darken-2">REFRESH</a>
+			<br><br>
+		</section>
+		<!--Scripts below-->
+		<script src="js/sandbox.js"></script>
+	</body>
+</html>
