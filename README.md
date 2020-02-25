@@ -1,4 +1,4 @@
-# Countdown
+# Countdown ⏳
 
 > A countdown template for all of my projects.
 
