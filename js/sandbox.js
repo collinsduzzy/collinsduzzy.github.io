@@ -1,5 +1,5 @@
 //Create Deadline
-let deadline = new Date("March 08, 2020 14:00:00").getTime(); 
+let deadline = new Date("May 17, 2020 14:00:00").getTime(); 
 
 //Set Interval
 let x = setInterval(function() { 
