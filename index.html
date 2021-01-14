@@ -1,710 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="shortcut icon" href="img/rcon.png" type="image/x-icon">
-        <link rel="stylesheet" href="css/materialize.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <title>Home - Recipe.com</title>
-        <style>
-            header {
-                position: relative;
-            }
-           nav {
-               z-index: 1;
-               position: fixed;
-               top: 0;
-               left: 0;
-           }
-           div.slider {
-               z-index: -1;
-           }
-           p {
-               font-size: 1.5em;
-               text-align: justify;
-           }
-           .slider .indicators .indicator-item.active {
-               background-color: #e65100;
-           }
-        </style>
-    </head>
-    <body>
-        <!--Header-->
-        <header>
-            <nav class="nav-wrapper white scrollspy">
-                <div class="container navbar">
-                    <a href="index.html" class="brand-logo">
-                        <img src="img/logo.png" alt="" width="150px">
-                    </a>
-                    <a href="#mobile-links" class="sidenav-trigger">
-                        <i class="material-icons orange-text text-darken-4">menu</i>
-                    </a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="#welcome" class=" orange-text text-darken-4 scrollspy"><strong>Home</strong> </a></li>
-                        <li><a href="#cakes" class=" orange-text text-darken-4 scrollspy"><strong>Cakes</strong> </a></li>
-                        <li><a href="#soups" class=" orange-text text-darken-4 scrollspy"><strong>Soups</strong> </a></li>
-                        <li><a href="#chicken" class=" orange-text text-darken-4 scrollspy"><strong>Chicken</strong> </a></li>
-                        <li><a href="#customers" class=" orange-text text-darken-4 scrollspy"><strong>Customers</strong> </a></li>
-                    </ul>
-                </div>
-            </nav>
-            <ul class="sidenav orange darken-4" id="mobile-links">
-                <li><a href="#welcome" class="white-text">Home</a></li>
-                <li><a href="#cakes" class="white-text">Cakes</a></li>
-                <li><a href="#soups" class="white-text">Soups</a></li>
-                <li><a href="#chicken" class="white-text">Chicken</a></li>
-                <li><a href="#customers" class="white-text">Customers</a></li>
-            </ul>
-            <div class="slider scrollspy" id="nav">
-                <ul class="slides">
-                    <li>
-                        <img src="img/cake_fruit.jpg" alt="">
-                    </li>
-                    <li>
-                        <img src="img/shrimp_soup.jpg" alt="">
-                    </li>
-                    <li>
-                        <img src="img/chicken_3.jpg" alt="">
-                    </li>
-                    <li>
-                        <img src="img/dessert_chocolate.jpg" alt="">
-                    </li>
-                    <li>
-                        <img src="img/ginger_cake.webp" alt="">
-                    </li>
-                </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clnsDzy</title>
+  <link rel="stylesheet" href="css/bulma.css">
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <link rel="stylesheet" href="css/brands.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .main-text {
+      font-family: 'Sniglet', cursive;
+    }
+
+    .main-text-color {
+      color: #6c63ff !important;
+    }
+
+    .main-bg-color {
+      background-color: #6c63ff !important;
+    }
+
+    header {
+      position: fixed !important;
+      width: 100% !important;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      box-shadow:  2px 2px 2px rgba(0, 0, 0, 0.14) !important;
+    }
+
+   span.navbar-text {
+      display: none !important;
+    }
+    
+    a:hover span.navbar-text{
+      display: block !important;
+      margin-top: -10px !important;
+    }
+
+    /* #nav-links {
+      margin-top: 10% !important;
+    } */
+
+    div.card:hover {
+      box-shadow:  4px 4px 4px 4px rgba(0, 0, 0, 0.14) !important;
+      transition: all .3s ease-out !important;
+      cursor: pointer;
+    }
+      
+
+    i.fab {
+      font-size: 4em;
+      margin: 0 25px !important;
+      color: white !important;
+    }
+
+    .column > a.m-4:hover {
+      position: relative !important;
+      left: 3px !important;
+      top: 3px !important;
+    }
+  </style>
+</head>
+<body class="main-text">
+  <header class="has-background-white">
+    <nav class="navbar container">
+      <div class="navbar-brand">
+        <a href="/" class="navbar-item is-size-3 main-text-color">clns</a>
+        <a class="navbar-burger main-text-color has-text-weight-bold" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end has-text-centered">
+          <a href="#top" class="main-text-color" class="navbar-item">
+            <img src="assets/home.svg" alt="home icon" class="mx-5 mt-2">
+            <span class="navbar-text is-hidden-tablet">Home</span>
+          </a>
+          <a href="#services" class="main-text-color" class="navbar-item">
+            <img src="assets/services.svg" alt="services icon" class="mx-5 mt-2">
+            <span class="navbar-text is-hidden-tablet">Services</span>
+          </a>
+          <a href="#clients" class="main-text-color" class="navbar-item">
+            <img src="assets/clients.svg" alt="clients icon" class="mx-5 mt-2">
+            <span class="navbar-text is-hidden-tablet">Clients</span>
+          </a>
+          <a href="#connect" class="main-text-color" class="navbar-item">
+            <img src="assets/connect.svg" alt="connect icon" class="mx-5 mt-2">
+            <span class="navbar-text is-hidden-tablet">Connect</span>
+          </a>
+        </div>
+      </div>
+      <div class="navbar-menu is-hidden-desktop mt-1" id="nav-links">
+        <div class="navbar-end has-text-centered">
+          <a href="" class="main-text-color" class="navbar-item">
+            <img src="assets/home.svg" alt="home icon" class="mx-5 mt-2">
+          </a>
+          <a href="" class="main-text-color" class="navbar-item">
+            <img src="assets/services.svg" alt="services icon" class="mx-5 mt-2">
+          </a>
+          <a href="" class="main-text-color" class="navbar-item">
+            <img src="assets/clients.svg" alt="clients icon" class="mx-5 mt-2">
+          </a>
+          <a href="" class="main-text-color" class="navbar-item">
+            <img src="assets/connect.svg" alt="connect icon" class="mx-5 mt-2">
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="section mt-6" id="banner">
+      <div class="container mt-4">
+        <div class="columns is-8 is-variable is-vcentered has-text-centered">
+          <div class="column is-6-desktop-only">
+            <h1 class="is-size-1 main-text-color">Hi, I'm Collins</h1>
+            <span class="is-size-3">i build web apps</span>
+            <div>
+              <a class="button main-bg-color has-text-white" href="#">View My Portfolio</a>
             </div>
-        </header>
-        <!--Body-->
-        <main>
-            <!--Welcome-->
-            <section class="section container scrollspy" id="welcome">
-                    <h3 class="orange-text text-darken-4">Hello there, foodies!</h3>
-                    <p>
-                        You smart, you loyal, you a genius. You see the hedges, how I got it shaped up? 
-                        It’s important to shape up your hedges, it’s like getting a haircut, stay fresh. 
-                         I’m giving you cloth talk, cloth. 
-                        Special cloth alert, cut from a special cloth. In life there will be road blocks
-                         but we will over come it. In life you have to take the trash out, 
-                        if you have trash in your life, take it out, throw it away, get rid of it, major key.
-                    </p>
-            </section>
-            <div class="divider container"></div>
-            <section class="section container">
-                <br>
-                    <div class="row">
-                        <div class="col s12 l4">
-                            <ul class="collapsible popout">
-                                <li>
-                                    <div class="collapsible-header center orange darken-4 white-text">
-                                        <i class="material-icons">label</i>
-                                        <strong>CAKES!</strong>
-                                    </div>
-                                    <div class="collapsible-body">
-                                        <img src="img/sponge_cake.webp" alt="" class="responsive-img">
-                                       <h6>
-                                        I’m giving you cloth talk, cloth. Special cloth alert, cut from a special cloth.
-                                         It’s on you how you want to live your life.
-                                       </h6>
-                                       <a href="#cakes" class="btn-flat orange darken-4 white-text"><strong>All Cake Recipes</strong></a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col s12 l4">
-                            <ul class="collapsible popout">
-                                <li>
-                                    <div class="collapsible-header center orange darken-4 white-text">
-                                        <i class="material-icons">label</i>
-                                        <strong>SOUPS</strong>
-                                    </div>
-                                    <div class="collapsible-body">
-                                        <img src="img/mexican_soup.webp" alt="" class="responsive-img">
-                                       <h6>
-                                        The key to success is to keep your head above the water, never give up. 
-                                        The key is to drink fresh coconut. Special cloth talk!
-                                       </h6>
-                                       <a href="#soups" class="btn-flat orange darken-4 white-text"><strong>All Soup Recipes</strong></a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col s12 l4">
-                            <ul class="collapsible popout">
-                                <li>
-                                    <div class="collapsible-header center orange darken-4 white-text">
-                                        <i class="material-icons">label</i>
-                                        <strong>CHICKEN</strong>
-                                    </div>
-                                    <div class="collapsible-body">
-                                        <img src="img/chicken_8.webp" alt="" class="responsive-img">
-                                       <h6>
-                                        A major key, never panic. 
-                                        Don’t panic, when it gets crazy and rough, don’t panic, stay calm. 
-                                        The key is to drink some fresh milk.
-                                       </h6>
-                                       <a href="#chicken" class="btn-flat orange darken-4 white-text"><strong>All Chicken Recipes</strong></a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-            </section>
-            <div class="divider container"></div>
-              <!--Comments-->
-            <section class="container section scrollspy" id="customers">
-                <h3 class="orange-text text-darken-4 center">What Our Customers Say...</h3>
-                <br>
-                    <ul class="collection">
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle orange darken-4 white-text">person</i>
-                            <span class="title"><strong class="orange-text text-darken-4">Ryan Kingfisher</strong></span>
-                            <h6><em class="grey-text text-darken-2">"In life there will be road blocks but we will over come it. 
-                                Hammock talk come soon. Let’s see what Chef Dee got that they don’t want us to eat."
-                            </em></h6>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle orange darken-4 white-text">person</i>
-                            <span class="title"><strong class="orange-text text-darken-4">Jessica Ulman</strong class="orange-text text-darken-4"></span>
-                            <h6><em class="grey-text text-darken-2">"They will try to close the door on you, just open it. 
-                                Look at the sunset, life is amazing, life is beautiful, life is what you make it."
-                            </em></h6>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle orange darken-4 white-text">person</i>
-                            <span class="title"><strong class="orange-text text-darken-4">Olubenga Tiawo</strong></span>
-                            <h6><em class="grey-text text-darken-2">" Learning is cool, but knowing is better, and I know the key to success. 
-                                The key to more success is to have a lot of pillows."
-                            </em></h6>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle orange darken-4 white-text">person</i>
-                            <span class="title"><strong class="orange-text text-darken-4">Kugama Namastuki</strong class="orange-text text-darken-4"></span>
-                            <h6><em class="grey-text text-darken-2">" Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, 
-                                and I’m never giving up, I’m just getting started.."
-                            </em></h6>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle orange darken-4 white-text">person</i>
-                            <span class="title"><strong class="orange-text text-darken-4">Lafeez Abdul</strong class="orange-text text-darken-4"></span>
-                            <h6><em class="grey-text text-darken-2">" You see that bamboo behind me though, you see that bamboo?
-                                Ain’t nothin’ like bamboo. Bless up. I’m up to something. "
-                            </em></h6>
-                        </li>
-                    </ul>
-            </section>
-            <!--Recipes: Cake-->
-            <div id="cakes"></div>
-            <div class="parallax-container hide-on-med-and-down">
-                <div class="parallax">
-                    <img src="img/cake.jpg" alt="" class="responsive-img">
-                </div>
+          </div>
+          <div class="column is-6-desktop-only is-hidden-mobile">
+            <img src="assets/coder_1.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="about">
+      <div class="container">
+        <h1 class="is-size-2 main-text-color">About</h1>
+        <p class="is-size-5 has-text-justified">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga, quibusdam autem impedit aliquam aliquid molestias harum, itaque aspernatur asperiores consequatur alias nihil quos enim ea, adipisci officiis aperiam optio tenetur vitae repudiandae eos quisquam? Inventore sed animi a numquam similique id velit fugiat? Necessitatibus labore rerum odit autem voluptatum modi similique minus veniam doloribus tempora reprehenderit, ad sed porro excepturi aut aliquam ratione est animi. Eaque, molestias perferendis tenetur obcaecati pariatur repellat natus quia fuga atque, eum ipsa a blanditiis id explicabo incidunt aut architecto, iure voluptas porro doloribus expedita nam placeat. Repellat hic nesciunt dignissimos quas temporibus! Culpa.</p>
+        <div id="services"></div>
+      </div>
+    </section>
+    <section class="section">
+      <h1 class="main-text-color is-size-2 has-text-centered mb-6">Services</h1>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-4-desktop">
+            <div class="card">
+              <div class="card-image has-text-centered">
+                <img src="assets/responsive.svg" alt="">
+              </div>
+              <div class="card-content">
+                <h3 class="main-text-color is-size-4">Responsive Web Apps</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </div>
             </div>
-            <img src="img/cake.jpg" alt="Main header - Cakes" class="responsive-img hide-on-large-only">
-            <section class="section container scrollspy">
-                <h3 class="orange-text text-darken-4">Cakes</h3>
-                    <p>
-                        The other day the grass was brown, now it’s green because I ain’t give up.
-                         Never surrender. The key is to enjoy life, because they don’t want you to enjoy life. 
-                         I promise you, they don’t want you to jetski, they don’t want you to smile. 
-                        Congratulations, you played yourself.
-                    </p>
-            </section>
-            <section class="container">
-                <div class="row">
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/sponge_cake.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Sponge Cake</strong></span>
-                                <h6>Give thanks to the most high. The weather is amazing.</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#" class="orange-text text-darken-4">INGREDIENTS</a>
-                                <a href="#" class="orange-text text-darken-4">BAKE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/velvet_cake.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Velvet Cake</strong></span>
-                                <h6>Walk with me through the pathway of more success.</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#" class="orange-text text-darken-4">INGREDIENTS</a>
-                                <a href="#" class="orange-text text-darken-4">BAKE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/courgette_cake.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Courgette Cake</strong></span>
-                                <h6>They will try to close the door on you, just open it. Lion!</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#" class="orange-text text-darken-4">INGREDIENTS</a>
-                                <a href="#" class="orange-text text-darken-4">BAKE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/chocolate_2.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Cholocate Cake</strong></span>
-                                <h6>When you get out the shower, always dry your back.</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#" class="orange-text text-darken-4">INGREDIENTS</a>
-                                <a href="#" class="orange-text text-darken-4">BAKE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/coffeeslab_cake.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Coffee Slab Cake</strong></span>
-                                <h6> To succeed you must believe. Special cloth talk!</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#" class="orange-text text-darken-4">INGREDIENTS</a>
-                                <a href="#" class="orange-text text-darken-4">BAKE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/pistachio_cake.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Pistachio Cake</strong></span>
-                                <h6>Never complain, complaining is a weak emotion.</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#"  class="orange-text text-darken-4">INGREDIENTS</a>
-                                <a href="#" class="orange-text text-darken-4">BAKE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/polenta_cake.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Polenta Cake</strong></span>
-                                <h6>Lion! I’m up to something. Want to eat?</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#" class="orange-text text-darken-4">INGREDIENTS</a>
-                                <a href="#" class="orange-text text-darken-4">BAKE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/buttermilk_cake.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Buttermilk Cake</strong></span>
-                                <h6>When you get out the shower, dry your back.</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#" class="orange-text text-darken-4">INGREDIENTS</a>
-                                <a href="#" class="orange-text text-darken-4">BAKE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/chocolate_1.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Peanut Cake</strong></span>
-                                <h6>When you get out the shower, always dry your back.</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#" class="orange-text text-darken-4">INGREDIENTS</a>
-                                <a href="#" class="orange-text text-darken-4">BAKE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--Recipes: Soup-->
-            <div id="soups"></div>
-            <div class="parallax-container hide-on-med-and-down">
-                <div class="parallax">
-                    <img src="img/soup.jpg" alt="" class="responsive-img">
-                </div>
+          </div>
+          <div class="column is-4-desktop">
+            <div class="card">
+              <div class="card-image has-text-centered">
+                <img src="assets/htmlcss.svg" alt="">
+              </div>
+              <div class="card-content">
+                <h3 class=" main-text-color is-size-4">Static Websites</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </div>
             </div>
-            <img src="img/soup.jpg" alt="Main Header -Soups" class="responsive-img hide-on-large-only">
-            <section class="section container"  >
-                <h3 class="orange-text text-darken-4 scrollspy">Soups</h3>
-                <p>
-                    When you believe, you will succeed. The first of the month is coming, we have to get money, 
-                    we have no choice. It cost money to eat and they don’t want you to eat. 
-                    Surround yourself with angels, positive energy, beautiful people, beautiful souls, and a clean heart.
-                </p>
-            </section>
-            <section class="container">
-                <div class="row">
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/lentil_soup.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Lentil Soup</strong></span>
-                                <h6>Give thanks to the most high. You smart, you loyal.</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">COOK NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/olive_soup.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Olive Soup</strong></span>
-                                <h6> I’m never giving up, I’m just getting started. You know it.</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">COOK NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/miso_soup.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Miso Soup</strong></span>
-                                <h6> It took me twenty five years to get these plants, trust me.</h6>
-                            </div>
-                            <div class="card-action center orange-text text-darken-4">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">COOK NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/chilli_soup.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Chilli Soup</strong></span>
-                                <h6>Eliptical talk. Life is what you make it, so let’s make it.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">COOK NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/pumpkin_soup.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Pumpkin Soup</strong></span>
-                                <h6>To be successful, you’ve got to work hard to make history.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">COOK NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/winter_soup.jpg" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Winter Soup</strong></span>
-                                <h6>It’s important to use cocoa butter. It’s the key to success.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">COOK NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/tom_soup.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Tom Soup</strong></span>
-                                <h6>Own a swimming pool? Don't use chlorine, use salt water.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">COOK NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/morroco_soup.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Morrocan Soup</strong></span>
-                                <h6>If you have trash in your life, take it out, throw it away.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">COOK NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/mexican_soup.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Mexican Soup</strong></span>
-                                <h6>The key to success is to keep your head above the water.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">COOK NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--Recipes: Chicken-->
-            <div  id="chicken"></div>
-            <div class="parallax-container hide-on-med-and-down">
-                <div class="parallax">
-                    <img src="img/chicken.jpg" alt="" class="responsive-img">
-                </div>
+          </div>
+          <div class="column is-4-desktop">
+            <div class="card">
+              <div class="card-image has-text-centered">
+                <img src="assets/content_mgt.svg" alt="">
+              </div>
+              <div class="card-content">
+                <h3 class=" main-text-color is-size-4">Content Manager</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </div>
             </div>
-            <img src="img/chicken.jpg" alt="Main header - Chicken" class="responsive-img hide-on-large-only">
-            <section class="section container scrollspy">
-                    <h3 class="orange-text text-darken-4">Chicken</h3>
-                    <p>
-                        The key to more success is to have a lot of pillows. We the best. 
-                        The ladies always say Khaled you smell good, I use no cologne. 
-                        Cocoa butter is the key. I’m giving you cloth talk, cloth. Special cloth alert, cut from a special cloth.
-                    </p>
-            </section>
-            <section class="container">
-                <div class="row">
-                    <div class="col s12 m6  l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/chicken_5.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Oregano Wings</strong></span>
-                                <h6>In life there will be road blocks but we will overcome.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">PREPARE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6  l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/chicken_11.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Mashed Wings</strong></span>
-                                <h6>Everyone has a choice. I pick my choice, squeaky clean.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">PREPARE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6  l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/chicken_1.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Buttered Wings</strong></span>
-                                <h6>It’s on you how you want to live your life. Special Cloth.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">PREPARE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6  l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/chicken_8.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Yogurt Chicken</strong></span>
-                                <h6>Celebrate success right, the only way, apple. Fan luv. </h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">PREPARE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6  l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/chicken_10.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Chicken Tikka</strong></span>
-                                <h6>Remember in the jungle there’s a lot of they in there.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">PREPARE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6  l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/chicken_2.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Chicken Couscous</strong></span>
-                                <h6> I pick my choice, squeaky clean. Be focused. Stay safe.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">PREPARE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6  l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/caramel.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Caramel Chicken</strong></span>
-                                <h6>It’s the ones closest to you that want to see you fail.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">PREPARE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6  l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/ramen.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Chicken Ramen</strong></span>
-                                <h6>They will try to close the door on you, just open it.</h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">PREPARE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6  l4">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="img/saag.webp" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title orange-text text-darken-4"><strong>Chicken Saag</strong></span>
-                                <h6>you do know that they don’t want you to have lunch. </h6>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="orange-text text-darken-4">CONTENTS</a>
-                                <a href="#" class="orange-text text-darken-4">PREPARE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <!--Contact-->
-        <!--Footer-->
-        <footer class="page-footer black">
-            <div class="container">
-                <div class="row">
-                    <div class="col s6 l3">
-                        <img src="img/logo.png" width="70%" class="responsive-img">
-                        <h6 class="white-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Corporis doloremque doloribus beatae magni in natus eligendi.</h6>
-                    </div>
-                    <div class="col s6 l4 push-l5">
-                        <h4 class="orange-text text-darken-4"><strong>Quick Links</strong></h4>
-                        <ul>
-                            <li><a href="#nav" class="white-text">Back to top</a></li>
-                            <li><a href="#cakes" class="white-text">Cakes</a></li>
-                            <li><a href="#soups" class="white-text">Soups</a></li>
-                            <li><a href="#chicken" class="white-text">Chicken</a></li>
-                            <li><a href="#customers" class="white-text">Customers</a></li>
-                        </ul>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-4-desktop">
+            <div class="card">
+              <div class="card-image has-text-centered">
+                <img src="assets/version_control.svg" alt="">
+              </div>
+              <div class="card-content">
+                <h3 class=" main-text-color is-size-4">Version Control</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </div>
             </div>
-            <div class="footer-copyright orange darken-4">
-                <div class="container">
-                    <h6 class="white-text center-align"> © 2020 Recipe.com | <a href="https://github.com/collinsduzzy" target="_blank" class="white-text">CORE-TECH</a></h6>
-                </div>
+          </div>
+          <div class="column is-4-desktop">
+            <div class="card">
+              <div class="card-image has-text-centered">
+                <img src="assets/co_workers.svg" alt="">
+              </div>
+              <div class="card-content">
+                <h3 class=" main-text-color is-size-4">ICT Instructor</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </div>
             </div>
-        </footer>
-       
-        <script src="js/jqueryv3.4.1.js"></script>
-        <script src="js/materialize.js"></script>
-        <script>
-            $(document).ready(function(){
-                $('.sidenav').sidenav();
-                $('.slider').slider({
-                    height : 600,
-                });
-                $('.collapsible').collapsible();
-                $('.parallax').parallax();
-                $('.scrollspy').scrollSpy();
-            });
-        </script>
-    </body>
+          </div>
+          <div class="column is-4-desktop">
+            <div class="card">
+              <div class="card-image has-text-centered">
+                <img src="assets/banner.svg" alt="">
+              </div>
+              <div class="card-content">
+                <h3 class=" main-text-color is-size-4">Free Lancing</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="clients"></div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h1 class="main-text-color is-size-2 mb-6">Stack</h1>
+
+      </div>
+    </section>
+    <section class="section" >
+      <div class="container">
+        <h1 class="main-text-color is-size-2">Clients</h1>
+        <p class="has-text-justified is-size-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque eveniet nisi similique pariatur earum corporis natus odit tempora tempore alias asperiores sed, voluptate ipsa omnis eum in ut, sint dignissimos. Iusto magni incidunt facere autem harum praesentium. Nobis sunt dolorem numquam. Officiis distinctio sit eius? Saepe aperiam consequatur sed? Qui.</p>
+        <div class="columns mt-6 is-vcentered">
+          <div class="column">
+            <a href="#" class="m-4">
+              <img src="assets/icon.png" alt="" width="10%">
+            </a>
+            <a href="#" class="m-4">
+              <img src="assets/logo - Copy.png" alt="" width="10%">
+            </a>
+            <a href="#" class="m-4">
+              <img src="assets/logo.png" alt="" width="10%">
+            </a>            
+            <a href="#" class="m-4">
+              <img src="assets/surcon.png" alt="" width="30%">
+            </a>            
+          </div>
+        </div>
+      </div>
+      <div id="connect"></div>
+    </section>
+  
+    <div class="has-background-grey-dark">
+      <section class="section">
+        <div class="container" id="connect">
+          <h1 class="has-text-white is-size-2 has-text-centered">Connect With Me</h1>
+          <p class="has-text-white is-size-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, praesentium. Expedita accusantium et sit. Non.</p>
+          <div class="columns mt-6">
+            <div class="column has-text-centered">
+              <a href="https://www.twitter.com/xollinsduzzy" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.github.com/collinsduzzy" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+      </section>
+    </div>
+  </main>
+  <footer class="has-background-black p-3">
+    <h4 class="is-size-6 has-text-white has-text-centered">&COPY; 2021 Collins Okoroafor. 🚀</h4>
+  </footer>
+
+  <!-- Scripts below -->
+  <script src="navbar.js"></script>
+</body>
 </html>
