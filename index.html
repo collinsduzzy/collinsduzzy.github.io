@@ -50,15 +50,21 @@
       
     i.fab {
       font-size: 4em;
-      margin: 0 25px !important;
+      margin: 0 10px !important;
       color: white !important;
     }
 
-    .column > a.m-4:hover {
-      position: relative !important;
-      left: 3px !important;
-      top: 3px !important;
+    @keyframes takeoff {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: .5;
+      }
     }
+
+    span.take-off {animation: takeoff 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;}
+
   </style>
 </head>
 <body class="main-text">
@@ -231,55 +237,37 @@
       </div>
       <div id="clients"></div>
     </section>
-    <section class="section" >
-      <div class="container">
-        <h1 class="main-text-color is-size-2">Clients</h1>
-        <p class="has-text-justified is-size-5-mobile is-size-4-desktop">
-          Here's some top organizations I've been priviledged to build for.
-        </p>
-        <div class="columns mt-6 is-vcentered">
-          <div class="column">
-            <a href="https://www.msmartskillcenter.com" class="m-4">
-              <img src="assets/icon.png" alt="" width="10%">
-            </a>
-            <a href="https://www.gatewaycomputers.vercel.app" class="m-4">
-              <img src="assets/logo - Copy.png" alt="" width="10%">
-            </a>
-            <a href="https://latob.vercel.app" class="m-4">
-              <img src="assets/logo.png" alt="" width="10%">
-            </a>            
-            <a href="#" class="m-4">
-              <img src="assets/surcon.png" alt="" width="30%">
-            </a>            
-          </div>
-        </div>
-      </div>
-      <div id="connect"></div>
-    </section>
-  
-    <div class="has-background-grey-dark">
-      <section class="section">
-        <div class="container" id="connect">
-          <h1 class="has-text-white is-size-2 has-text-centered">Connect With Me</h1>
-          <p class="has-text-white is-size-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, praesentium. Expedita accusantium et sit. Non.</p>
-          <div class="columns mt-6">
-            <div class="column has-text-centered">
+    <section class="section has-background-dark">
+      <div class="container" id="connect">
+        <h1 class="has-text-white is-size-2 has-text-centered">Get In Touch</h1>
+        <p class="has-text-white is-size-4-desktop is-size-5-mobile has-text-centered">You can reach me on the following platforms</p>
+        <div class="mt-6 has-text-centered">
+          <ul>
+            <li class="is-inline">
               <a href="https://www.twitter.com/xollinsduzzy" target="_blank">
                 <i class="fab fa-twitter"></i>
               </a>
+            </li>
+            <li class="is-inline">
               <a href="https://www.github.com/collinsduzzy" target="_blank">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="#">
+            </li>
+            <li class="is-inline">
+              <a href="https://www.linkedin.com/in/collins-okoroafor-60732b12a/" target="_blank">
                 <i class="fab fa-linkedin"></i>
               </a>
-            </div>
-          </div>
-      </section>
-    </div>
+            </li>
+            <li class="is-inline is-hidden-mobile">
+              <a href="https://www.reddit.com/user/collins-duzzy">
+                <i class="fab fa-reddit-alien"></i>
+              </a>
+            </li>
+          </ul>
+    </section>
   </main>
   <footer class="has-background-black p-3">
-    <h4 class="is-size-6 has-text-white has-text-centered">&COPY; 2021 Collins Okoroafor. 🚀</h4>
+    <h4 class="is-size-6 has-text-white has-text-centered">&COPY; 2021 Collins Okoroafor. <span class="take-off">🚀</span></h4>
   </footer>
   <!-- Scripts below -->
   <script src="scripts/navbar.js"></script>
