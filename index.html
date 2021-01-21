@@ -32,6 +32,11 @@
       box-shadow:  1px 1px 1px rgba(0, 0, 0, 0.14) !important;
     }
 
+    a.logo:hover {
+      text-decoration: underline !important;
+      text-decoration-color: #6c63ff !important;
+    }
+
    span.navbar-text {
       display: none !important;
     }
@@ -39,11 +44,38 @@
     a:hover span.navbar-text{
       display: block !important;
       margin-top: -10px !important;
+      
     }
 
+    h1.tada:hover {
+      animation: tada !important;
+      animation-duration: 2s !important;
+      animation-iteration-count: infinite !important;
+    }
+
+    a#portfolio-btn:hover {
+      background-color: white !important;
+      color:#6c63ff !important;
+    }
+
+    img.filter {
+      filter: drop-shadow(2px 2px 2px grey) !important;
+      }
+    img.filter:hover {
+      animation: pulse !important;
+      animation-duration: 2s !important;
+      animation-iteration-count: infinite !important;
+      filter: drop-shadow(2px 2px 4px grey) !important;
+    }
     div.card:hover {
-      box-shadow:  4px 4px 4px 4px rgba(0, 0, 0, 0.14) !important;
-      transition: all .3s ease-out !important;
+      animation: headShake !important;
+      animation-duration: 1.5s !important;
+      cursor: pointer;
+    }
+
+    li.is-inline img:hover {
+      animation: headShake !important;
+      animation-duration: 1.5s !important;
       cursor: pointer;
     }
 
@@ -67,7 +99,7 @@
   <header class="has-background-white">
     <nav class="navbar container">
       <div class="navbar-brand">
-        <a href="/" class="navbar-item is-size-4 main-text-color">clns</a>
+        <a href="/" class="navbar-item is-size-4 main-text-color logo">clns</a>
         <a class="navbar-burger main-text-color is-vcentered mt-1" id="burger">
           <span></span>
           <br>
@@ -117,14 +149,14 @@
       <div class="container mt-6">
         <div class="columns is-8 is-variable is-vcentered has-text-centered">
           <div class="column is-6-desktop-only">
-            <h1 class="is-size-2 main-text-color animate__animated animate__tada animate__repeat-3 animate__delay-3s">Hi, I'm Collins</h1>
+            <h1 class="is-size-1 main-text-color tada">Hi, I'm Collins</h1>
             <span class="is-size-4">A Front End Developer from Abuja</span>
             <div>
               <a class="button main-bg-color has-text-white mt-2 is-rounded" href="https://drive.google.com/file/d/1ZjbVN-NSk96gKUgwTgH_SLlv6MUQhmLl/view?usp=sharing" target="_blank" id="portfolio-btn">My Portfolio</a>
             </div>
           </div>
           <div class="column is-6-desktop-only is-hidden-mobile">
-            <img src="assets/coder_1.svg" alt="">
+            <img src="assets/coder_1.svg" alt="" class="filter">
           </div>
         </div>
       </div>
@@ -215,7 +247,7 @@
     </section>
     <section class="section main-bg-color">
       <div class="container">
-        <h1 class="has-text-white is-size-1 mb-6">I build with these tools...</h1>
+        <h1 class="has-text-white is-size-1-desktop is-size-2-mobile mb-6">I build with these tools...</h1>
         <div>
           <ul class="has-text-centered">
             <li class="is-inline mx-4"><img width="15%" src="assets/html5.svg" alt=""></li>
